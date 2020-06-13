@@ -58,7 +58,7 @@
 				</ul>
 				
 				<div class="my-2 my-md-3">
-				    <a class="btn btn-primary" href="mailto: kasthurinaresh408@gmail.com?subject = Feedback&body = Message" >Get in Touch</a>
+				    <a class="btn btn-primary" href="contactUs.html" target="_blank">Get in Touch</a>
 				</div>
 			</div>		
 		</nav>
@@ -66,23 +66,48 @@
     
     <div class="main-wrapper">
 	    <section class="cta-section theme-bg-light py-5">
-		
-			
+				
 		    <div class="container text-center">
 			
-			    <h2 class="heading" style = "font-family:Monaco;">A Journey through Bits Bytes & Sports</h2>
+			    <h2 class="heading" style = "font-family:Monaco;">Journey through Bits Bytes & Sports</h2>
 			    <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
-			    <form class="signup-form form-inline justify-content-center pt-3">
-                   
-					<form action="https://formspree.io/mwkrbrjb" method="POST">
+			                       
+				<!--	<form class="signup-form form-inline justify-content-center pt-3" action="https://formspree.io/mwkrbrjb" method="POST">
 						<label> <input type="text" placeholder="Name" name="name"> </label>
 						<label> <input type="email" placeholder="Email" name="_replyto" required> </label>
 						<input type="hidden" name="_subject" value="New submission!"></input>
 						<input type="submit" style="color:#335BFF" value="Subscribe"></input>
+						<input type="hidden" name="_next" value="blog-post.html" />
 						
 					</form>
+					-->
+				
+					
+					<form id="gform" name="gform" target="hidden_iframe" onsubmit="submitted=true;"
+					class="signup-form form-inline justify-content-center pt-3" action="https://docs.google.com/forms/d/e/1FAIpQLSd2HWJ6q8E_f4bZYst2yUcgi-RtncTjJ1etpOnuBKDPh1y-lQ/formResponse?">
+					
+						<label for="entry.1066327959"> <input type="text" placeholder="Name" name="entry.1066327959" id="entry.1066327959"> </label>
+						
+						<label for="entry.1909795277"> <input type="email" placeholder="Email" name="entry.1909795277" id="entry.1909795277" required> </label>
+						
+						
+						<input type="submit" style="color:#335BFF" value="Subscribe"></input>						
+						
+					</form>
+					
+					<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){}"></iframe>
+    <script src="http://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var submitted = false;
+    </script>
+    <script type="text/javascript">
+        $('#gform').on('submit', function(e){
+            $('#gform *').fadeOut(2000);
+            $('#gform').prepend('Your submission has been processed. Thank you for your input. We will get back to you when we feel like it.');
+        })
+    </script>
                   
-                </form>
+              
 		    </div><!--//container-->
 	    </section>
 	    <section class="blog-list px-3 py-5 p-md-5">
